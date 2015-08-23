@@ -37,7 +37,7 @@ def initialize_nouns_db():
     db.commit()
     db.close()
 
-def fetch_word():
+def find_noun():
     """
     Find a noun from the list, then return and delete it.
     """
@@ -68,4 +68,4 @@ if __name__ == "__main__":
     if not os.path.isfile("nouns.db"):
        initialize_nouns_db()
     
-    set_interval(find_noun_and_tweet, 600)
+    set_interval(find_noun_and_tweet, 10)
