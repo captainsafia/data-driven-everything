@@ -1,4 +1,4 @@
-import threading
+import time
 import os
 import tweepy
 import sqlite3
@@ -14,12 +14,9 @@ def set_interval(func, sec):
     """
     Execute func every sec seconds.
     """
-    def func_wrapper():
-        set_interval(func, sec)
+    while True:
         func()
-    t = threading.Timer(sec, func_wrapper)
-    t.start()
-    return t
+        time.sleep(sec)
 
 def initialize_nouns_db():
     """
