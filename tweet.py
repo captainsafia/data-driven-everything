@@ -65,4 +65,4 @@ if __name__ == "__main__":
     if not os.path.isfile("nouns.db"):
        initialize_nouns_db()
     
-    set_interval(find_noun_and_tweet, 1800)
+    set_interval(find_noun_and_tweet, 7200)
